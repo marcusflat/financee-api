@@ -26,6 +26,7 @@
     "serverless-http": "^2.7.0"
   },
   "devDependencies": {
+    "sequelize-cli": "^6.2.0",
     "serverless-dotenv-plugin": "^3.5.1",
     "serverless-offline": "^6.8.0"
   }

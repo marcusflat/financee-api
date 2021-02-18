@@ -1,6 +1,7 @@
 const express = require('express');
 const serverless = require('serverless-http');
 const cors = require('cors');
+const db = require('./database');
 
 const app = express();
 

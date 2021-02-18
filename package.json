@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "local": "sls offline start --httpPort 4000"
+    "local": "sls offline start --httpPort 4000",
+    "migrations": "env-cmd sequelize db:migrate",
+    "migrations:undo": "env-cmd sequelize db:migrate:undo"
   },
   "repository": {
     "type": "git",
@@ -26,6 +28,7 @@
     "serverless-http": "^2.7.0"
   },
   "devDependencies": {
+    "env-cmd": "^10.1.0",
     "sequelize-cli": "^6.2.0",
     "serverless-dotenv-plugin": "^3.5.1",
     "serverless-offline": "^6.8.0"

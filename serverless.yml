@@ -13,14 +13,14 @@ provider:
     MARCUS_TEST: ${env:MARCUS_TEST}
 
 functions:
-  category:
-    handler: src/routes/category.handler
+  user:
+    handler: src/routes/users.handler
     events:
       - http:
-          path: /category
+          path: /users
           method: ANY
       - http:
-          path: /category/{proxy+}
+          path: /users/{proxy+}
           method: ANY
 
 plugins:

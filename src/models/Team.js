@@ -1,31 +1,27 @@
 const { Model, DataTypes } = require('sequelize');
 
-class User extends Model {
+class Team extends Model {
   static init(sequelize) {
     super.init({
       uuid: {
         type: DataTypes.UUID,
         defaultValue: DataTypes.UUIDV4
       },
-      firebaseId: DataTypes.STRING,
       name: {
         type: DataTypes.STRING,
         allowNull: false
       },
-      email: {
-        type: DataTypes.STRING,
-        allowNull: false
-      },
-      preferences: DataTypes.JSONB
+      ownerId: DataTypes.INTEGER
     }, {
-      tableName: 'users',
+      tableName: 'teams',
       sequelize
     })
   }
 
   static associate(models) {
-    this.belongsToMany(models.Team, { through: 'users_teams', foreignKey: 'user_id', as: 'teams' });
+    this.belongsTo(models.User, { foreignKey: 'owner_id', as: 'owner' });
+    this.belongsToMany(models.User, { through: 'users_teams', foreignKey: 'team_id', as: 'users' });
   }
 }
 
-module.exports = User;
+module.exports = Team;

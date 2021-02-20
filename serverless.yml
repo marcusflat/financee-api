@@ -22,6 +22,15 @@ functions:
       - http:
           path: /users/{proxy+}
           method: ANY
+  team:
+    handler: src/routes/teams.handler
+    events:
+      - http:
+          path: /teams
+          method: ANY
+      - http:
+          path: /teams/{proxy+}
+          method: ANY
 
 plugins:
   - serverless-offline

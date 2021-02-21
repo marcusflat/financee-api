@@ -33,6 +33,19 @@ module.exports = {
     } catch (error) {
       return res.status(400).json(error);
     }
+  },
+
+  async getAll(req, res) {
+    try {
+      const users = await User.findAll()
+      return res.json(users);
+
+    } catch (error) {
+      console.log('error', error)
+      return res.status(400).json(error);
+    }
   }
+
+
 
 }

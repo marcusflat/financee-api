@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "local": "sls offline start --httpPort 4000",
     "migrations": "env-cmd sequelize db:migrate",
-    "migrations:undo": "env-cmd sequelize db:migrate:undo"
+    "migrations:undo": "env-cmd sequelize db:migrate:undo",
+    "seeds": "env-cmd sequelize db:seed:all"
   },
   "repository": {
     "type": "git",
@@ -31,6 +32,7 @@
     "env-cmd": "^10.1.0",
     "sequelize-cli": "^6.2.0",
     "serverless-dotenv-plugin": "^3.5.1",
-    "serverless-offline": "^6.8.0"
+    "serverless-offline": "^6.8.0",
+    "uuid": "^8.3.2"
   }
 }

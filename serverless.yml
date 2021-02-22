@@ -31,6 +31,15 @@ functions:
       - http:
           path: /teams/{proxy+}
           method: ANY
+  account:
+    handler: src/routes/accounts.handler
+    events:
+      - http:
+          path: /accounts
+          method: ANY
+      - http:
+          path: /accounts/{proxy+}
+          method: ANY
 
 plugins:
   - serverless-offline

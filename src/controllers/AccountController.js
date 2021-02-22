@@ -24,6 +24,9 @@ module.exports = {
 
       if(userId) {
         const accounts = await Account.findAll({
+          where: {
+            active: true
+          },
           include: {
             association: 'team',
             include: {

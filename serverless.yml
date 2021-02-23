@@ -58,6 +58,15 @@ functions:
         - http:
             path: /types/{proxy+}
             method: ANY
+  categories:
+      handler: src/routes/categories.handler
+      events:
+        - http:
+            path: /categories
+            method: ANY
+        - http:
+            path: /categories/{proxy+}
+            method: ANY
 
 plugins:
   - serverless-offline

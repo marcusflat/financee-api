@@ -21,6 +21,7 @@ class Team extends Model {
   static associate(models) {
     this.belongsTo(models.User, { foreignKey: 'owner_id', as: 'owner' });
     this.belongsToMany(models.User, { through: 'users_teams', foreignKey: 'team_id', as: 'users' });
+    this.hasMany(models.Category);
   }
 }
 

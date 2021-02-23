@@ -1,10 +1,10 @@
 const { express, app, serverless } = require('../app');
-const TransactionStatus = require('../controllers/TransactionStatus');
+const TransactionStatusController = require('../controllers/TransactionStatusController');
 
 const router = express.Router();
 
-router.get('/', TransactionStatus.get);
-router.post('/', TransactionStatus.create);
+router.get('/', TransactionStatusController.get);
+router.post('/', TransactionStatusController.create);
 
 
 app.use('/statuses', router);

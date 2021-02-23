@@ -1,10 +1,10 @@
 const { express, app, serverless } = require('../app');
-const TransactionTypes = require('../controllers/TransactionTypes');
+const TransactionTypeController = require('../controllers/TransactionTypeController');
 
 const router = express.Router();
 
-router.get('/', TransactionTypes.get);
-router.post('/', TransactionTypes.create);
+router.get('/', TransactionTypeController.get);
+router.post('/', TransactionTypeController.create);
 
 
 app.use('/types', router);

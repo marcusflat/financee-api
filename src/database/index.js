@@ -5,6 +5,7 @@ const User = require('../models/User');
 const Team = require('../models/Team');
 const Account = require('../models/Account');
 const TransactionStatus = require('../models/TransactionStatus');
+const TransactionTypes = require('../models/TransactionTypes');
 
 const connection = new Sequelize(dbConfig);
 
@@ -12,6 +13,7 @@ User.init(connection);
 Team.init(connection);
 Account.init(connection);
 TransactionStatus.init(connection)
+TransactionTypes.init(connection)
 
 User.associate(connection.models);
 Team.associate(connection.models);

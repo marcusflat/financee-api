@@ -49,6 +49,15 @@ functions:
       - http:
           path: /statuses/{proxy+}
           method: ANY
+  types:
+      handler: src/routes/transactionTypes.handler
+      events:
+        - http:
+            path: /types
+            method: ANY
+        - http:
+            path: /types/{proxy+}
+            method: ANY
 
 plugins:
   - serverless-offline

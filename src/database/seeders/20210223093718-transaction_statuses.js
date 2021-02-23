@@ -7,10 +7,13 @@ module.exports = {
         name: 'Agendado'
       },
       {
-        name: 'Pago'
+        name: 'Realizado'
       },
       {
-        name: 'Recebido'
+        name: 'Faturado'
+      },
+      {
+        name: 'Previsão'
       },
     ], {});
   },

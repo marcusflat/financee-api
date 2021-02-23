@@ -1,4 +1,4 @@
-const TransactionStatus = require('../models/TransactionStatus');
+const TransactionTypes = require('../models/TransactionTypes');
 
 module.exports = {
 
@@ -6,11 +6,11 @@ module.exports = {
     try {
       const { name } = req.body;
 
-      const transactionStatus = await TransactionStatus.create({
+      const transactionTypes = await TransactionTypes.create({
         name
       });
 
-      return res.json(transactionStatus);
+      return res.json(transactionTypes);
     } catch (error) {
       return res.status(400).json(error);
     }
@@ -19,10 +19,11 @@ module.exports = {
   async get(req, res) {
     try {
       
-      const transactionStatuses = await TransactionStatus.findAll();
-      return res.json(transactionStatuses);
+      const transactionTypes = await TransactionTypes.findAll();
+      return res.json(transactionTypes);
 
     } catch (error) {
+      console.log('error', error)
       return res.status(400).json(error);
     }
   },

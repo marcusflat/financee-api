@@ -3,7 +3,7 @@ const AccountController = require('../controllers/AccountController');
 
 const router = express.Router();
 
-router.get('/', AccountController.getAll);
+router.get('/', AccountController.getAllByUser);
 router.post('/', AccountController.create);
 
 

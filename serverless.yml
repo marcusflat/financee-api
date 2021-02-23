@@ -40,6 +40,15 @@ functions:
       - http:
           path: /accounts/{proxy+}
           method: ANY
+  statuses:
+    handler: src/routes/transactionStatuses.handler
+    events:
+      - http:
+          path: /statuses
+          method: ANY
+      - http:
+          path: /statuses/{proxy+}
+          method: ANY
 
 plugins:
   - serverless-offline

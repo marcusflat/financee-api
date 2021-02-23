@@ -4,12 +4,14 @@ const dbConfig = require('../config/database');
 const User = require('../models/User');
 const Team = require('../models/Team');
 const Account = require('../models/Account');
+const TransactionStatus = require('../models/TransactionStatus');
 
 const connection = new Sequelize(dbConfig);
 
 User.init(connection);
 Team.init(connection);
 Account.init(connection);
+TransactionStatus.init(connection)
 
 User.associate(connection.models);
 Team.associate(connection.models);

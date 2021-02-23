@@ -18,7 +18,7 @@ module.exports = {
     }
   },
 
-  async getAll(req, res) {
+  async getAllByUser(req, res) {
     try {
       const { userId } = req.query;
 
